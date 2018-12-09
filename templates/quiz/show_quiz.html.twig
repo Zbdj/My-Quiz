@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <br>
+    {% for q in quiz %}
+    <h1>{{ q.name }}</h1>
+    <a href="{{ path('question',{id: q.id, idQuestion : q.getReponseId.first.id}) }}"><button class="btn btn-success">Commencer le quiz</button></a>
+
+    <br><br><br><br>
+
+    {% endfor %}
+</div>
+{% endblock %}

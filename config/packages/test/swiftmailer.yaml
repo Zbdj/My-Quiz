@@ -1,2 +1,20 @@
+# swiftmailer:
+#     disable_delivery: true
+# swiftmailer:
+#     transport: smtp
+#     auth_mode: login
+#     port: 587
+#     host: smtp.mailtrap.io
+#     username: dd01d25166cbf2
+#     password: 28c17db7fdc609
+#     spool: { type: 'memory' }
+
+
 swiftmailer:
-    disable_delivery: true
+  spool:     { type: memory }
+  transport: smtp
+  host:      smtp.mailtrap.io
+  username:  dd01d25166cbf2
+  password:  28c17db7fdc609
+  auth_mode: cram-md5
+  port: 2525

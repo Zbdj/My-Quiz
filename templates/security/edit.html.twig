@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block title %}{% endblock %}
+
+{% block body %}
+<br><br>
+    {{ include('security/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+{% endblock %}

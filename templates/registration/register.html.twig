@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+
+{{ form_start(form) }}
+<div class="container">
+    <br><br>
+    <div class="col-sm-10">
+            <h5>S'inscrire</h5><br><br>
+    </div>
+    <div class="form-group">
+    <div class="col-sm-10">
+    {{ form_row(form.email) }}
+    </div>
+    </div>
+<br>
+    <div class="form-group">
+    <div class="col-sm-10">
+    {{ form_row(form.username) }}
+    </div>
+    </div>
+<br>
+    <div class="form-group">
+    <div class="col-sm-10">
+    {{ form_row(form.plainPassword.first) }}
+    </div>
+    </div>
+<br>
+    <div class="form-group">
+    <div class="col-sm-10">
+    {{ form_row(form.plainPassword.second) }}
+    </div>
+    </div>
+<br>
+    <div class="col-sm-10">
+        <button type="submit" class="btn btn-success">Register!</button><br><br>
+        <a href="/connexion">Deja inscris ?</a>
+    </div>
+</div>
+{{ form_end(form) }}
+{% endblock %}

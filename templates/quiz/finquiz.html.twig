@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+    <br><br>
+    <div class="alert alert-dismissible alert-danger"><h2>Quizz terminé</h2></div>
+</div>
+<br><br>
+
+<div class="container">
+{% if score <= 5 %}
+    <h2>Vous avez eu {{ score }} bonne reponse</h2><br>
+    <div class="alert alert-dismissible alert-danger"><h3>{{ score }} / 10</h3></div>
+    
+{% endif %}
+
+{% if score > 5 %}
+    <h2>Vous avez eu {{ score }} bonne reponse</h2><br>
+    <div class="alert alert-dismissible alert-success"><h3>{{ score }} / 10</h3></div>
+
+{% endif %}
+</div>
+
+{% endblock %}

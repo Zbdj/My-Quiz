@@ -1,28 +1,32 @@
 {# templates/security/login.html.twig #}
-{# ... you will probably extend your base template, like base.html.twig #}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Connexion</title>
-</head>
-<body>
 
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
+{% extends 'base.html.twig' %}
+{% block body %}
 
 <form action="{{ path('connexion') }}" method="post">
-    <div>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+    <div class="container">
+        <br><br>
+        <div class="col-sm-10">
+                <h5>Se connecter</h5><br><br>
+                {% if error %}
+                     <div class="alert alert-dismissible alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+            </div>
+
+    <div class="form-group">
+    <div class="col-sm-10">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" />
+    </div>
     </div>
 
     <br>
 
-    <div>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password" />
+    <div class="form-group">
+    <div class="col-sm-10">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="_password" class="form-control"/>
+    </div>
     </div>
 
     <br>
@@ -33,8 +37,11 @@
     #}
     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-    <button type="submit">login</button>
-</form>
+    <div class="col-sm-10">
+    <button type="submit" class="btn btn-success">Login!</button><br><br>
+    <a href="/register">S'inscrire</a>
+    </div>
 
-</body>
-</html>
+</div>
+</form>
+{% endblock %}

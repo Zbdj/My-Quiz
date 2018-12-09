@@ -1,0 +1,10 @@
+{{ form_start(form) }}
+
+<div class="container">
+    <h5>Modifier profil de {{ app.user.username}}</h5><br><br>
+<div class="form control">
+    {{ form_widget(form) }}
+</div>
+<button class="btn btn-success">{{ button_label|default('Save') }}</button>
+</div>
+{{ form_end(form) }}

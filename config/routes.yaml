@@ -1,9 +1,15 @@
-#index:
+# index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
-logout:
+app_logout:
     path: /deconnexion
 
-login:
-    path: /connexion
-    controller: App\Controller\SecurityController::login
+
+# login:
+#     path: /connexion
+#     controller: App\Controller\SecurityController::login
+
+# register:
+#     path: /register
+#     controller: src\Controller\RegistrationController::register
+

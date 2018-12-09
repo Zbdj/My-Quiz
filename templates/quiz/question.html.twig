@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <br><br>
+    <div class="card border-success mb-3" >
+            <div class="card-header"><h4>{{ question.question }}</h4><br></div>
+            <div class="card-body">
+        <form method="POST" action="{{ path('question', {id: id, idQuestion: nextQuestion} ) }}">
+                    {% for reponse in question.getQuestionId %}
+
+                    <div class="container">
+                    <div class="row">
+                        <input type="radio" name="{{ question.id }}" value="{{ reponse.id }}">{{ reponse.reponse }} </input>
+
+                        {# <h3>{{ reponse.reponse_exception }}</h3> #}
+                        
+                    </div>
+                    </div>
+                    <br>
+                    {% endfor %} 
+                    <input type="submit" value="Question suivante" class="btn btn-success">
+
+                 </form>
+            </div>
+          </div>    
+<br>
+</div>
+
+{% endblock %}

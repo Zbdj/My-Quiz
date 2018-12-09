@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+
+    {% for categorie in categories %}
+    <div class="container">
+        <br>
+        <div class="row">
+                <a href="/quiz/{{categorie.id}}">
+                    <h4>
+                            {{ categorie.name }}
+                    </h4>
+                </a>
+
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+{% endblock %}
